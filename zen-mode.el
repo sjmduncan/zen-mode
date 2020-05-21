@@ -39,7 +39,7 @@
 
 ;; variables
 (defvar zen-mode:disable-mode-line t "Hide the mode line in zen-mode.")
-(defvar zen-mode:zen-cols 81 "Default width of zen mode text area (columns).")
+(defvar zen-mode:zen-cols 82 "Default width of zen mode text area (columns).")
 
 ;; local variables
 (defvar-local zen-run-mode nil "Set to true when zen mode is enabled")
@@ -127,6 +127,7 @@
   (interactive)
   (setq zen-mode:zen-cols (- zen-mode:zen-cols 2))
   (zen-mode:set-margins)
+	(message "%d cols" zen-mode:zen-cols)
   )
 
 (defun zen-mode:increase-text-width()
@@ -134,6 +135,7 @@
   (interactive)
   (setq zen-mode:zen-cols (+ zen-mode:zen-cols 2))
   (zen-mode:set-margins)
+	(message "%d cols" zen-mode:zen-cols)
   )
 
 (defun zen-mode:set-margins()
